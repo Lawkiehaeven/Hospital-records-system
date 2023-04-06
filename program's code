@@ -1,0 +1,92 @@
+#include <stdio.h>
+#include <string.h>
+
+#define PASSWORD "kAARibuniAAR"
+
+struct PatientInfo {
+    char name[50];
+    float weight;
+    int age;
+    float bmi;
+    int room_number;
+    char illness[50];
+    char contact[50];
+};
+
+int main() {
+    struct PatientInfo patients[3];
+    int i, is_authenticated = 0;
+    char password[20];
+
+    strcpy(patients[0].name, "JohnMoe");
+    patients[0].weight = 61.5;
+    patients[0].age = 25;
+    patients[0].bmi = 22.4;
+    patients[0].room_number = 101;
+    strcpy(patients[0].illness, "Flu");
+    strcpy(patients[0].contact, "0799012345");
+
+    strcpy(patients[1].name, "JaneSmith");
+    patients[1].weight = 65.2;
+    patients[1].age = 27;
+    patients[1].bmi = 24.3;
+    patients[1].room_number = 202;
+    strcpy(patients[1].illness, "Broken leg");
+    strcpy(patients[1].contact, "0791234567");
+
+    strcpy(patients[2].name, "DavidJohnson");
+    patients[2].weight = 80.3;
+    patients[2].age = 45;
+    patients[2].bmi = 30.2;
+    patients[2].room_number = 303;
+    strcpy(patients[2].illness, "High blood pressure");
+    strcpy(patients[2].contact, "0722984523");
+
+    strcpy(patients [3].name, "JunitaClarosa");
+    patients[3].weight =73.1;
+    patients[3].age =30;
+    patients[3].bmi=24.4;
+    patients[3].room_number =100;
+    strcpy(patients[3].illness, "Cancer");
+    strcpy(patients[3].contact, "0788234567");
+    // Ask the user to enter password
+    printf("Enter password: ");
+    scanf("%s", password);
+
+    // Check if the password is correct
+    if (strcmp(password, PASSWORD) == 0) {
+        is_authenticated = 1;
+    } else {
+        printf("Incorrect password\n");
+        return 1;
+    }
+
+    if (is_authenticated) {
+        char patient_name[50];
+        int found = 0;
+        // Ask for patient name
+        printf("Enter patient name: ");
+        scanf("%s", patient_name);
+
+        for (i = 0; i < 3; i++) {
+            // Check if the patient exists
+            if (strcmp(patient_name, patients[i].name) == 0) {
+                printf("Name: %s\n", patients[i].name);
+                printf("Weight: %f kg\n", patients[i].weight);
+                printf("Age: %d years\n", patients[i].age);
+                printf("BMI: %f\n", patients[i].bmi);
+                printf("Room Number: %d\n", patients[i].room_number);
+                printf("Illness: %s\n", patients[i].illness);
+                printf("Contact: %s\n", patients[i].contact);
+                found = 1;
+                break;
+            }
+        }
+
+        if (!found) {
+            printf("Patient not found.\n");
+        }
+    }
+
+    return 0;
+}
