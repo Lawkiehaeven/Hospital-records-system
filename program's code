@@ -73,6 +73,30 @@ int main() {
     patients[6].room_number =404;
     strcpy(patients[6].illness, "Heart disease");
     strcpy(patients[6].contact, "0765432198");
+    
+    strcpy(patients [7].name, "AnakOgat");
+    patients[7].weight =36.8;
+    patients[7].age =14;
+    patients[7].bmi=20.8;
+    patients[7].room_number =343;
+    strcpy(patients[7].illness, "Tuberculosis");
+    strcpy(patients[7].contact, "0734597890");
+
+    strcpy(patients [8].name, "HildaHelida");
+    patients[8].weight =52.2;
+    patients[8].age =20;
+    patients[8].bmi=22.6;
+    patients[8].room_number =213;
+    strcpy(patients[8].illness, "Typhoid");
+    strcpy(patients[8].contact, "0112345654");
+    
+     strcpy(patients [9].name, "FidelCalvin");
+    patients[9].weight =69.2;
+    patients[9].age =25;
+    patients[9].bmi=27.6;
+    patients[9].room_number =93;
+    strcpy(patients[9].illness, "Gonorrhea");
+    strcpy(patients[9].contact, "01032567988");
 
     // Ask the user to enter password
     printf("Enter password: ");
